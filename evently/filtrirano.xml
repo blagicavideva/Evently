@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dogodki stevilo="1">
+  <dogodek id="E002">
+    <ime>Košarkarska tekma Ljubljana - Maribor</ime>
+    <kategorija>Šport</kategorija>
+    <datum>2026-10-18</datum>
+    <ura>18:00</ura>
+    <cenaVstopnice>15.0</cenaVstopnice>
+    <opis />
+    <povezava>https://example.com/e/002</povezava>
+    <prizorisce id="P02">
+      <naziv>Arena Stožice</naziv>
+      <mesto>Ljubljana</mesto>
+      <drzava>Slovenija</drzava>
+      <kapaciteta>16000</kapaciteta>
+      <lat>46.0661</lat>
+      <lon>14.5262</lon>
+    </prizorisce>
+    <napoved id="W002">
+      <temperatura>14.0</temperatura>
+      <padavine>2.4</padavine>
+      <veter>15.0</veter>
+    </napoved>
+  </dogodek>
+</dogodki>

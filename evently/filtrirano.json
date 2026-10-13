@@ -1,0 +1,27 @@
+[
+  {
+    "id": "E002",
+    "ime": "Košarkarska tekma Ljubljana - Maribor",
+    "kategorija": "Šport",
+    "datum": "2026-10-18",
+    "ura": "18:00",
+    "cenaVstopnice": 15.0,
+    "opis": null,
+    "povezava": "https://example.com/e/002",
+    "prizorisce": {
+      "id": "P02",
+      "naziv": "Arena Stožice",
+      "mesto": "Ljubljana",
+      "drzava": "Slovenija",
+      "kapaciteta": 16000,
+      "lat": 46.0661,
+      "lon": 14.5262
+    },
+    "napoved": {
+      "id": "W002",
+      "temperatura": 14.0,
+      "padavine": 2.4,
+      "veter": 15.0
+    }
+  }
+]

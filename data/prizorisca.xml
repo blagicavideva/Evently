@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prizorisca>
+  <prizorisce id="P01"><naziv>Športna dvorana Tabor</naziv><mesto>Maribor</mesto><drzava>Slovenija</drzava><kapaciteta>3000</kapaciteta><lat>46.5593</lat><lon>15.6431</lon></prizorisce>
+  <prizorisce id="P02"><naziv>Arena Stožice</naziv><mesto>Ljubljana</mesto><drzava>Slovenija</drzava><kapaciteta>16000</kapaciteta><lat>46.0661</lat><lon>14.5262</lon></prizorisce>
+  <prizorisce id="P03"><naziv>Cankarjev dom</naziv><mesto>Ljubljana</mesto><drzava>Slovenija</drzava><kapaciteta>1500</kapaciteta><lat>46.0509</lat><lon>14.4984</lon></prizorisce>
+  <prizorisce id="P04"><naziv>Dvorana Zlatorog</naziv><mesto>Celje</mesto><drzava>Slovenija</drzava><kapaciteta>3500</kapaciteta><lat>46.2281</lat><lon>15.2606</lon></prizorisce>
+  <prizorisce id="P05"><naziv>Avditorij Portorož</naziv><mesto>Portorož</mesto><drzava>Slovenija</drzava><kapaciteta>1000</kapaciteta><lat>45.5147</lat><lon>13.5936</lon></prizorisce>
+  <prizorisce id="P06"><naziv>Dvorana Zlato polje</naziv><mesto>Kranj</mesto><drzava>Slovenija</drzava><kapaciteta>2000</kapaciteta><lat>46.2389</lat><lon>14.3556</lon></prizorisce>
+  <prizorisce id="P07"><naziv>Narodni dom Maribor</naziv><mesto>Maribor</mesto><drzava>Slovenija</drzava><kapaciteta>800</kapaciteta><lat>46.5578</lat><lon>15.6459</lon></prizorisce>
+  <prizorisce id="P08"><naziv>Križanke</naziv><mesto>Ljubljana</mesto><drzava>Slovenija</drzava><kapaciteta>1400</kapaciteta><lat>46.0472</lat><lon>14.5014</lon></prizorisce>
+  <prizorisce id="P09"><naziv>Dvorana Bonifika</naziv><mesto>Koper</mesto><drzava>Slovenija</drzava><kapaciteta>2000</kapaciteta><lat>45.5439</lat><lon>13.7303</lon></prizorisce>
+  <prizorisce id="P10"><naziv>Merkur Arena</naziv><mesto>Graz</mesto><drzava>Avstrija</drzava><kapaciteta>16364</kapaciteta><lat>47.0711</lat><lon>15.4389</lon></prizorisce>
+  <prizorisce id="P11"><naziv>Dom sportova</naziv><mesto>Zagreb</mesto><drzava>Hrvaška</drzava><kapaciteta>6000</kapaciteta><lat>45.8039</lat><lon>15.9964</lon></prizorisce>
+  <prizorisce id="P12"><naziv>Dvorana Ptuj</naziv><mesto>Ptuj</mesto><drzava>Slovenija</drzava><kapaciteta></kapaciteta><lat>46.4200</lat><lon>15.8700</lon></prizorisce>
+</prizorisca>

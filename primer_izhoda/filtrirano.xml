@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dogodki stevilo="5">
+  <dogodek id="E002">
+    <ime>Košarkarska tekma Ljubljana - Maribor</ime>
+    <kategorija>Šport</kategorija>
+    <datum>2026-10-18</datum>
+    <ura>18:00</ura>
+    <cenaVstopnice>15.0</cenaVstopnice>
+    <opis />
+    <povezava>https://example.com/e/002</povezava>
+    <prizorisce id="P02">
+      <naziv>Arena Stožice</naziv>
+      <mesto>Ljubljana</mesto>
+      <drzava>Slovenija</drzava>
+      <kapaciteta>16000</kapaciteta>
+      <lat>46.0661</lat>
+      <lon>14.5262</lon>
+    </prizorisce>
+    <napoved id="W002">
+      <temperatura>14.0</temperatura>
+      <padavine>2.4</padavine>
+      <veter>15.0</veter>
+    </napoved>
+  </dogodek>
+  <dogodek id="E015">
+    <ime>Literarni večer</ime>
+    <kategorija>Kultura</kategorija>
+    <datum>2026-10-22</datum>
+    <ura>18:00</ura>
+    <cenaVstopnice />
+    <opis />
+    <povezava />
+    <prizorisce id="P03">
+      <naziv>Cankarjev dom</naziv>
+      <mesto>Ljubljana</mesto>
+      <drzava>Slovenija</drzava>
+      <kapaciteta>1500</kapaciteta>
+      <lat>46.0509</lat>
+      <lon>14.4984</lon>
+    </prizorisce>
+    <napoved id="W015">
+      <temperatura>12.0</temperatura>
+      <padavine>0.0</padavine>
+      <veter>5.0</veter>
+    </napoved>
+  </dogodek>
+  <dogodek id="E003">
+    <ime>Simfonični koncert</ime>
+    <kategorija>Kultura</kategorija>
+    <datum>2026-11-05</datum>
+    <ura>19:30</ura>
+    <cenaVstopnice>30.0</cenaVstopnice>
+    <opis>Dela slovenskih skladateljev</opis>
+    <povezava>https://example.com/e/003</povezava>
+    <prizorisce id="P03">
+      <naziv>Cankarjev dom</naziv>
+      <mesto>Ljubljana</mesto>
+      <drzava>Slovenija</drzava>
+      <kapaciteta>1500</kapaciteta>
+      <lat>46.0509</lat>
+      <lon>14.4984</lon>
+    </prizorisce>
+    <napoved id="W003">
+      <temperatura>8.0</temperatura>
+      <padavine>5.1</padavine>
+      <veter>10.0</veter>
+    </napoved>
+  </dogodek>
+  <dogodek id="E008">
+    <ime>Božični koncert v Križankah</ime>
+    <kategorija>Glasba</kategorija>
+    <datum>2026-12-12</datum>
+    <ura>19:00</ura>
+    <cenaVstopnice />
+    <opis>Prodaja vstopnic še ni odprta</opis>
+    <povezava>https://example.com/e/008</povezava>
+    <prizorisce id="P08">
+      <naziv>Križanke</naziv>
+      <mesto>Ljubljana</mesto>
+      <drzava>Slovenija</drzava>
+      <kapaciteta>1400</kapaciteta>
+      <lat>46.0472</lat>
+      <lon>14.5014</lon>
+    </prizorisce>
+    <napoved id="W008">
+      <temperatura>1.0</temperatura>
+      <padavine>3.2</padavine>
+      <veter>14.0</veter>
+    </napoved>
+  </dogodek>
+  <dogodek id="E014">
+    <ime>Veliki zimski spektakel</ime>
+    <kategorija>Festival</kategorija>
+    <datum>2026-12-19</datum>
+    <ura>16:00</ura>
+    <cenaVstopnice>40.0</cenaVstopnice>
+    <opis>Glasba, ples in ognjemet</opis>
+    <povezava>https://example.com/e/014</povezava>
+    <prizorisce id="P02">
+      <naziv>Arena Stožice</naziv>
+      <mesto>Ljubljana</mesto>
+      <drzava>Slovenija</drzava>
+      <kapaciteta>16000</kapaciteta>
+      <lat>46.0661</lat>
+      <lon>14.5262</lon>
+    </prizorisce>
+    <napoved id="W014">
+      <temperatura>0.5</temperatura>
+      <padavine>6.5</padavine>
+      <veter>18.0</veter>
+    </napoved>
+  </dogodek>
+</dogodki>

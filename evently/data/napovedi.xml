@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<napovedi>
+  <napoved id="W001"><dogodekId>E001</dogodekId><datum>2026-10-24</datum><temperatura>11.5</temperatura><padavine>0.0</padavine><veter>12</veter></napoved>
+  <napoved id="W002"><dogodekId>E002</dogodekId><datum>2026-10-18</datum><temperatura>14.0</temperatura><padavine>2.4</padavine><veter>15</veter></napoved>
+  <napoved id="W003"><dogodekId>E003</dogodekId><datum>2026-11-05</datum><temperatura>8.0</temperatura><padavine>5.1</padavine><veter>10</veter></napoved>
+  <napoved id="W004"><dogodekId>E004</dogodekId><datum>2026-11-14</datum><temperatura>6.5</temperatura><padavine>0.0</padavine><veter>8</veter></napoved>
+  <napoved id="W005"><dogodekId>E005</dogodekId><datum>2026-11-21</datum><temperatura>10.0</temperatura><padavine></padavine><veter>22</veter></napoved>
+  <napoved id="W006"><dogodekId>E006</dogodekId><datum>2026-10-31</datum><temperatura>9.0</temperatura><padavine>0.4</padavine></napoved>
+  <napoved id="W007"><dogodekId>E007</dogodekId><datum>2026-11-08</datum><temperatura>7.0</temperatura><padavine>0.0</padavine><veter>9</veter></napoved>
+  <napoved id="W008"><dogodekId>E008</dogodekId><datum>2026-12-12</datum><temperatura>1.0</temperatura><padavine>3.2</padavine><veter>14</veter></napoved>
+  <napoved id="W009"><dogodekId>E009</dogodekId><datum>2026-11-28</datum><temperatura>9.5</temperatura><padavine>0.0</padavine><veter>30</veter></napoved>
+  <napoved id="W010"><dogodekId>E010</dogodekId><datum>2026-11-01</datum><temperatura>8.5</temperatura><padavine>1.8</padavine><veter>11</veter></napoved>
+  <napoved id="W011"><dogodekId>E011</dogodekId><datum>2026-12-05</datum><temperatura>2.5</temperatura><padavine>0.0</padavine><veter>6</veter></napoved>
+  <napoved id="W012"><dogodekId>E012</dogodekId><datum>2026-11-15</datum><temperatura>5.0</temperatura><padavine></padavine><veter>7</veter></napoved>
+  <napoved id="W013"><dogodekId>E013</dogodekId><datum>2026-12-18</datum><temperatura>-1.5</temperatura><padavine>4.0</padavine><veter>13</veter></napoved>
+  <napoved id="W014"><dogodekId>E014</dogodekId><datum>2026-12-19</datum><temperatura>0.5</temperatura><padavine>6.5</padavine><veter>18</veter></napoved>
+  <napoved id="W015"><dogodekId>E015</dogodekId><datum>2026-10-22</datum><temperatura>12.0</temperatura><padavine>0.0</padavine><veter>5</veter></napoved>
+</napovedi>
