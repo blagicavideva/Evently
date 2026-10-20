@@ -1,0 +1,946 @@
+{
+  "vir": "Ticketmaster (javno prikazane strani evropskih trgov)",
+  "obdobje": {
+    "od": "2026-10-20",
+    "do": "2027-01-20"
+  },
+  "stevilo": 117,
+  "dogodki": [
+    {
+      "izvajalec": "Ruel",
+      "mesto": "Berlin",
+      "prizorisce": "Hole44",
+      "drzava": "Nemčija",
+      "datum": "2026-10-21",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "DUNDR Lillestrøm kirkemusikk- og kulturfestival",
+      "mesto": "LILLESTRØM",
+      "prizorisce": "Lillestrøm Kirke",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Hundzig",
+      "mesto": "OSLO",
+      "prizorisce": "BLÅ",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Jonas Fjeld Setter fra seg bagen",
+      "mesto": "JESSHEIM",
+      "prizorisce": "Ullensaker Kulturhus",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Kiss Facility",
+      "mesto": "OSLO",
+      "prizorisce": "BLÅ",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Oddny",
+      "mesto": "OSLO",
+      "prizorisce": "Rockefeller",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Standup Moss",
+      "mesto": "MOSS",
+      "prizorisce": "Verket Scene",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Waterloo",
+      "mesto": "BERGEN",
+      "prizorisce": "Forum Scene",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Zucchero",
+      "mesto": "OSLO",
+      "prizorisce": "Sentrum Scene",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Sigvart Dagsland",
+      "mesto": "STAVANGER",
+      "prizorisce": "St. Petri kirke",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "19:30"
+    },
+    {
+      "izvajalec": "Luvre47",
+      "mesto": "Nürnberg",
+      "prizorisce": "Club Stereo",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "19:45"
+    },
+    {
+      "izvajalec": "Andreas Gabalier",
+      "mesto": "Stuttgart",
+      "prizorisce": "Liederhalle (Beethovensaal)",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Charlie Jeer",
+      "mesto": "Köln",
+      "prizorisce": "Yard Club",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Denis Fischer",
+      "mesto": "Schwanewede",
+      "prizorisce": "Michaelskirche",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Ebow",
+      "mesto": "München",
+      "prizorisce": "Muffathalle",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Kultur am Haltepunkt",
+      "mesto": "Varel",
+      "prizorisce": "Jupp Eventhaus",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "LORI",
+      "mesto": "Leipzig",
+      "prizorisce": "Täubchenthal",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "The Cat Stevens Tribute",
+      "mesto": "Landshut",
+      "prizorisce": "Rathaus-Prunksaal",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Dungen",
+      "mesto": "BERGEN",
+      "prizorisce": "Ole Bull Scene",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Pink Floyd History",
+      "mesto": "Katowice",
+      "prizorisce": "Katowice Miasto Ogrodów",
+      "drzava": "Poljska",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Johan Blohm",
+      "mesto": "GÖTEBORG KoM Musik & Bar",
+      "prizorisce": "KoM Musik & Bar",
+      "drzava": "Švedska",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Stevie Wonder",
+      "mesto": "Stockholm 3Arena",
+      "prizorisce": "3Arena",
+      "drzava": "Švedska",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Sara Kulturhus",
+      "mesto": "SKELLEFTEÅ Sara kulturhus Scen 2",
+      "prizorisce": "Sara kulturhus Scen 2",
+      "drzava": "Švedska",
+      "datum": "2026-10-22",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Botticelli Baby",
+      "mesto": "Hamburg",
+      "prizorisce": "Knust",
+      "drzava": "Nemčija",
+      "datum": "2026-10-22",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Banned From Utopia",
+      "mesto": "TRONDHEIM",
+      "prizorisce": "Havet, Djupet",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Cowboyfrokost",
+      "mesto": "KRISTIANSAND S",
+      "prizorisce": "Kafé Krank / Laboratoriet",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Kåre Conradi",
+      "mesto": "OSLO",
+      "prizorisce": "Grefsenkollen",
+      "drzava": "Norveška",
+      "datum": "2026-10-22",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Kulturkirken Jakob",
+      "mesto": "OSLO",
+      "prizorisce": "Kulturkirken Jakob",
+      "drzava": "Norveška",
+      "datum": "2026-10-23",
+      "zacetek": "15:30"
+    },
+    {
+      "izvajalec": "Soundedit",
+      "mesto": "Łódź",
+      "prizorisce": "Klub Wytwórnia",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "18:00"
+    },
+    {
+      "izvajalec": "Śląska Jesień Gitarowa",
+      "mesto": "Tychy",
+      "prizorisce": "Mediateka",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "18:30"
+    },
+    {
+      "izvajalec": "Park Lane",
+      "mesto": "GÖTEBORG Park Lane",
+      "prizorisce": "Park Lane",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "18:30"
+    },
+    {
+      "izvajalec": "Musical meets Rock & Pop",
+      "mesto": "Bremervörde",
+      "prizorisce": "St.-Liborius-Kirche",
+      "drzava": "Nemčija",
+      "datum": "2026-10-23",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Koncert Chopinowski",
+      "mesto": "Warszawa",
+      "prizorisce": "Sala koncertowa Fryderyk",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Koncert przy świecach",
+      "mesto": "Warszawa",
+      "prizorisce": "Sala koncertowa Fryderyk",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Ruel",
+      "mesto": "Warszawa",
+      "prizorisce": "Klub OCZKI",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Backstreet Girls",
+      "mesto": "KARLSTAD NÖJESFABRIKEN",
+      "prizorisce": "NÖJESFABRIKEN",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Jacob Mann – Composer in Residence",
+      "mesto": "PITEÅ Studio Acusticum",
+      "prizorisce": "Studio Acusticum",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Magnus Carlsson",
+      "mesto": "ÖSTERSUND ÖSTERSUND - GAMLA TEATERN",
+      "prizorisce": "ÖSTERSUND - GAMLA TEATERN",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Globus Music Club",
+      "mesto": "Kraków",
+      "prizorisce": "Globus Music Club",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "19:30"
+    },
+    {
+      "izvajalec": "Benjamin Ingrosso",
+      "mesto": "KARLSTAD LÖFBERGS ARENA",
+      "prizorisce": "LÖFBERGS ARENA",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "19:30"
+    },
+    {
+      "izvajalec": "Lej Mi Pół",
+      "mesto": "Wrocław",
+      "prizorisce": "Stary Klasztor",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Pink Floyd History",
+      "mesto": "Poznań",
+      "prizorisce": "Sala Ziemi Poznań CongressCenter",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Zenek Grabowski",
+      "mesto": "Kołobrzeg",
+      "prizorisce": "Centrala",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Europe",
+      "mesto": "GÖTEBORG Filmstudion",
+      "prizorisce": "Filmstudion",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Joe Bonamassa",
+      "mesto": "Stockholm Avicii Arena",
+      "prizorisce": "Avicii Arena",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Koncert Chopinowski",
+      "mesto": "Warszawa",
+      "prizorisce": "Sala koncertowa Fryderyk",
+      "drzava": "Poljska",
+      "datum": "2026-10-23",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "ROB COFFINSHAKER",
+      "mesto": "BORGVIK",
+      "prizorisce": "SLIPERIET, BORGVIK",
+      "drzava": "Švedska",
+      "datum": "2026-10-23",
+      "zacetek": "21:15"
+    },
+    {
+      "izvajalec": "Śląska Jesień Gitarowa",
+      "mesto": "Tychy",
+      "prizorisce": "Mediateka",
+      "drzava": "Poljska",
+      "datum": "2026-10-24",
+      "zacetek": "12:00"
+    },
+    {
+      "izvajalec": "Oh What a Night",
+      "mesto": "LINKÖPING Linköping Konsert & Kongress",
+      "prizorisce": "Linköping Konsert & Kongress",
+      "drzava": "Švedska",
+      "datum": "2026-10-24",
+      "zacetek": "14:30"
+    },
+    {
+      "izvajalec": "Katarina församling",
+      "mesto": "Stockholm Allhelgonakyrkan",
+      "prizorisce": "Allhelgonakyrkan",
+      "drzava": "Švedska",
+      "datum": "2026-10-24",
+      "zacetek": "18:00"
+    },
+    {
+      "izvajalec": "Park Lane",
+      "mesto": "GÖTEBORG Park Lane",
+      "prizorisce": "Park Lane",
+      "drzava": "Švedska",
+      "datum": "2026-10-24",
+      "zacetek": "18:30"
+    },
+    {
+      "izvajalec": "Tango Eterno",
+      "mesto": "Antwerp",
+      "prizorisce": "Stadsschouwburg Antwerpen",
+      "drzava": "Belgija",
+      "datum": "2026-10-24",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Milk Inc.",
+      "mesto": "Merksem (Antwerpen)",
+      "prizorisce": "AFAS Dome",
+      "drzava": "Belgija",
+      "datum": "2026-10-24",
+      "zacetek": "20:30"
+    },
+    {
+      "izvajalec": "Danilo Rea",
+      "mesto": "Padova Sala dei Giganti al Liviano",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-24",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Willie Peyote",
+      "mesto": "Napoli Casa Della Musica Federico I",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-24",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "JAZZMI",
+      "mesto": "Milano Santeria Toscana 31",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-24",
+      "zacetek": "21:30"
+    },
+    {
+      "izvajalec": "Padova Jazz Festival",
+      "mesto": "Padova Barco Teatro",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-25",
+      "zacetek": "11:00"
+    },
+    {
+      "izvajalec": "The Music of 'From Studio Ghibli to One Piece'",
+      "mesto": "Mons",
+      "prizorisce": "Théâtre Royal",
+      "drzava": "Belgija",
+      "datum": "2026-10-25",
+      "zacetek": "14:00"
+    },
+    {
+      "izvajalec": "Laura Pausini",
+      "mesto": "Forest (Brussels)",
+      "prizorisce": "Vorst Nationaal/Forest National",
+      "drzava": "Belgija",
+      "datum": "2026-10-25",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Duran Duran",
+      "mesto": "Brussels",
+      "prizorisce": "ING ARENA",
+      "drzava": "Belgija",
+      "datum": "2026-10-26",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Robert Jon & the Wreck",
+      "mesto": "Verviers",
+      "prizorisce": "Spirit of 66",
+      "drzava": "Belgija",
+      "datum": "2026-10-26",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Eleine",
+      "mesto": "Paderno Dugnano (Milano) Slaughter Club",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-26",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Fontaines D.C.",
+      "mesto": "Casalecchio di Reno (Bologna) Unipol Arena",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-26",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Ruel",
+      "mesto": "Milano Magazzini Generali",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-26",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Don Toliver",
+      "mesto": "Assago Unipol Forum",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-27",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "JAZZMI",
+      "mesto": "Milano Alcatraz",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-27",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Sayf",
+      "mesto": "Roma Atlantico",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-27",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Willie Peyote",
+      "mesto": "Bologna Estragon",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-27",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Hommage à France Gall",
+      "mesto": "Mons",
+      "prizorisce": "Théâtre Royal",
+      "drzava": "Belgija",
+      "datum": "2026-10-28",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Salento Jazz",
+      "mesto": "Lecce Teatro Apollo",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-28",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Niall Horan",
+      "mesto": "Assago Unipol Forum",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-28",
+      "zacetek": "20:30"
+    },
+    {
+      "izvajalec": "JAZZMI",
+      "mesto": "Milano Auditorium San Fedele",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-28",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Willie Peyote",
+      "mesto": "Bologna Estragon",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-28",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Lotto Lounge",
+      "mesto": "Merksem (Antwerpen)",
+      "prizorisce": "Lotto Arena - Lotto Lounge",
+      "drzava": "Belgija",
+      "datum": "2026-10-29",
+      "zacetek": "17:30"
+    },
+    {
+      "izvajalec": "Ghinzu",
+      "mesto": "Forest (Brussels)",
+      "prizorisce": "Vorst Nationaal/Forest National",
+      "drzava": "Belgija",
+      "datum": "2026-10-29",
+      "zacetek": "18:30"
+    },
+    {
+      "izvajalec": "Bob Dylan",
+      "mesto": "Merksem (Antwerpen)",
+      "prizorisce": "Lotto Arena Antwerpen",
+      "drzava": "Belgija",
+      "datum": "2026-10-29",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Frédéric François",
+      "mesto": "Huy",
+      "prizorisce": "Centre Culturel",
+      "drzava": "Belgija",
+      "datum": "2026-10-29",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Judith Owen",
+      "mesto": "Brussels",
+      "prizorisce": "Cirque Royal - The Club",
+      "drzava": "Belgija",
+      "datum": "2026-10-29",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Cavern Beatles",
+      "mesto": "Ukkel",
+      "prizorisce": "Centre Culturel",
+      "drzava": "Belgija",
+      "datum": "2026-10-29",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Niall Horan",
+      "mesto": "Casalecchio di Reno (Bologna) Unipol Arena",
+      "prizorisce": null,
+      "drzava": "Italija",
+      "datum": "2026-10-29",
+      "zacetek": "20:45"
+    },
+    {
+      "izvajalec": "Petero Nzukira",
+      "mesto": "Brussels",
+      "prizorisce": "Cirque Royal - Koninklijk Circus",
+      "drzava": "Belgija",
+      "datum": "2026-10-30",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Avishai Cohen Trio",
+      "mesto": "Antwerp",
+      "prizorisce": "Stadsschouwburg Antwerpen",
+      "drzava": "Belgija",
+      "datum": "2026-10-30",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Amistat",
+      "mesto": "Zürich",
+      "prizorisce": "Kaufleuten",
+      "drzava": "Švica",
+      "datum": "2026-11-01",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Amistat",
+      "mesto": "Zürich",
+      "prizorisce": "Kaufleuten",
+      "drzava": "Švica",
+      "datum": "2026-11-02",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "$ONO$ CLIQ",
+      "mesto": "Zürich",
+      "prizorisce": "EXIL",
+      "drzava": "Švica",
+      "datum": "2026-11-04",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Andreas Gabalier",
+      "mesto": "Luzern",
+      "prizorisce": "KKL Luzern",
+      "drzava": "Švica",
+      "datum": "2026-11-04",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Grigory Sokolov",
+      "mesto": "Bern",
+      "prizorisce": "Casino Bern",
+      "drzava": "Švica",
+      "datum": "2026-11-05",
+      "zacetek": "19:30"
+    },
+    {
+      "izvajalec": "Andreas Gabalier",
+      "mesto": "Luzern",
+      "prizorisce": "KKL Luzern",
+      "drzava": "Švica",
+      "datum": "2026-11-05",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Apsilon",
+      "mesto": "Zürich",
+      "prizorisce": "Komplex 457",
+      "drzava": "Švica",
+      "datum": "2026-11-05",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "ElGrandeToto",
+      "mesto": "Zürich",
+      "prizorisce": "Dynamo Saal",
+      "drzava": "Švica",
+      "datum": "2026-11-05",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Bellarena Indoor Festival",
+      "mesto": "Fribourg",
+      "prizorisce": "BCF ARENA",
+      "drzava": "Švica",
+      "datum": "2026-11-06",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Soffie",
+      "mesto": "Zürich",
+      "prizorisce": "EXIL",
+      "drzava": "Švica",
+      "datum": "2026-11-06",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Calema",
+      "mesto": "Genève",
+      "prizorisce": "Arena Genève",
+      "drzava": "Švica",
+      "datum": "2026-11-07",
+      "zacetek": "20:30"
+    },
+    {
+      "izvajalec": "Nino D'Angelo",
+      "mesto": "Innsbruck",
+      "prizorisce": "Congress Innsbruck - Saal Tirol",
+      "drzava": "Avstrija",
+      "datum": "2026-11-08",
+      "zacetek": "18:00"
+    },
+    {
+      "izvajalec": "Amistat",
+      "mesto": "Genève",
+      "prizorisce": "Salle de l'Alhambra",
+      "drzava": "Švica",
+      "datum": "2026-11-08",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "LP",
+      "mesto": "Zürich",
+      "prizorisce": "Komplex 457",
+      "drzava": "Švica",
+      "datum": "2026-11-08",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Andreas Gabalier",
+      "mesto": "Salzburg",
+      "prizorisce": "Großes Festspielhaus",
+      "drzava": "Avstrija",
+      "datum": "2026-11-09",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "David Eugene Edwards",
+      "mesto": "Wien",
+      "prizorisce": "Flucc Wanne",
+      "drzava": "Avstrija",
+      "datum": "2026-11-09",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "ridgeclub",
+      "mesto": "Wien",
+      "prizorisce": "Grelle Forelle",
+      "drzava": "Avstrija",
+      "datum": "2026-11-09",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Swae Lee",
+      "mesto": "Zürich",
+      "prizorisce": "Komplex 457",
+      "drzava": "Švica",
+      "datum": "2026-11-09",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Placebo",
+      "mesto": "Wien",
+      "prizorisce": "Wiener Stadthalle - Halle D",
+      "drzava": "Avstrija",
+      "datum": "2026-11-10",
+      "zacetek": "19:30"
+    },
+    {
+      "izvajalec": "Gentleman",
+      "mesto": "Zürich",
+      "prizorisce": "X-TRA",
+      "drzava": "Švica",
+      "datum": "2026-11-10",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Black Sabbitch - A Tribute to Black Sabbath",
+      "mesto": "Wien",
+      "prizorisce": "Viper Room",
+      "drzava": "Avstrija",
+      "datum": "2026-11-11",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "Jack and the Weatherman",
+      "mesto": "Wien",
+      "prizorisce": "Flucc Wanne",
+      "drzava": "Avstrija",
+      "datum": "2026-11-11",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Ceren",
+      "mesto": "Zürich",
+      "prizorisce": "EXIL",
+      "drzava": "Švica",
+      "datum": "2026-11-11",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Erdling",
+      "mesto": "Wien",
+      "prizorisce": "Viper Room",
+      "drzava": "Avstrija",
+      "datum": "2026-11-12",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "PRESIDENT",
+      "mesto": "Zürich",
+      "prizorisce": "X-TRA",
+      "drzava": "Švica",
+      "datum": "2026-11-12",
+      "zacetek": "19:30"
+    },
+    {
+      "izvajalec": "Matthew Mole",
+      "mesto": "Wien",
+      "prizorisce": "Flex Cafe",
+      "drzava": "Avstrija",
+      "datum": "2026-11-12",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Ikkimel",
+      "mesto": "Zürich",
+      "prizorisce": "Halle 622",
+      "drzava": "Švica",
+      "datum": "2026-11-12",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Escape Metalcorner",
+      "mesto": "Wien",
+      "prizorisce": "Escape Metalcorner",
+      "drzava": "Avstrija",
+      "datum": "2026-11-13",
+      "zacetek": "19:00"
+    },
+    {
+      "izvajalec": "JONNY5",
+      "mesto": "Wien",
+      "prizorisce": "Flex",
+      "drzava": "Avstrija",
+      "datum": "2026-11-13",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Son Mieux",
+      "mesto": "Wien",
+      "prizorisce": "Flex Cafe",
+      "drzava": "Avstrija",
+      "datum": "2026-11-14",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Joe Jackson",
+      "mesto": "Wien",
+      "prizorisce": "Globe Wien",
+      "drzava": "Avstrija",
+      "datum": "2026-11-16",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Psychedelic Porn Crumpets",
+      "mesto": "Wien",
+      "prizorisce": "Flex",
+      "drzava": "Avstrija",
+      "datum": "2026-11-16",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "Alela Diane",
+      "mesto": "Wien",
+      "prizorisce": "Chelsea",
+      "drzava": "Avstrija",
+      "datum": "2026-11-16",
+      "zacetek": "21:00"
+    },
+    {
+      "izvajalec": "Cassia",
+      "mesto": "Wien",
+      "prizorisce": "WUK Werkstätten- & Kulturhaus",
+      "drzava": "Avstrija",
+      "datum": "2026-11-17",
+      "zacetek": "20:00"
+    },
+    {
+      "izvajalec": "EDIS",
+      "mesto": "Wien",
+      "prizorisce": "Ottakringer Brauerei",
+      "drzava": "Avstrija",
+      "datum": "2026-11-17",
+      "zacetek": "20:00"
+    }
+  ]
+}

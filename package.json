@@ -1,0 +1,12 @@
+{
+  "name": "evently-ticketmaster-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Puppeteer scraper za javno spletno stran Ticketmaster",
+  "scripts": {
+    "scrape": "node src/scraper_ticketmaster.js"
+  },
+  "dependencies": {
+    "puppeteer": "18.1.0"
+  }
+}
