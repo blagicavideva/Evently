@@ -1,0 +1,99 @@
+CHARSET="ANSI";
+AXIS-VERSION="2013";
+CODEPAGE="windows-1250";
+LANGUAGE="sl";
+LANGUAGES="sl","en";
+CREATION-DATE="20180723 10:30";
+DECIMALS=0;
+SHOWDECIMALS=0;
+MATRIX="1080712S";
+SUBJECT-CODE="96";
+SUBJECT-AREA="Kultura - Culture";
+SUBJECT-AREA[en]="Culture";
+COPYRIGHT=YES;
+DESCRIPTION="Prireditve in obiskovalci v ustanovah z odrsko dejavnostjo po vrstah prireditve, Slovenija, annually";
+DESCRIPTION[en]="Performances and attendance in institutions with stage activity by type of performances, Slovenia, annually";
+TITLE="Prireditve in obiskovalci v ustanovah z odrsko dejavnostjo po: VRSTA PRIREDITVE, MERITVE, LETO";
+TITLE[en]="Performances and attendance in institutions with stage activity by PERFORMANCE BY TYPE, MEASURES and YEAR";
+CONTENTS="Prireditve in obiskovalci v ustanovah z odrsko dejavnostjo";
+CONTENTS[en]="Performances and attendance in institutions with stage activity";
+UNITS="število";
+UNITS[en]="number";
+STUB="VRSTA PRIREDITVE";
+STUB[en]="PERFORMANCE BY TYPE";
+HEADING="MERITVE","LETO";
+HEADING[en]="MEASURES","YEAR";
+VALUES("VRSTA PRIREDITVE")="Vrsta prireditve - SKUPAJ","Klasièna glasba",
+"Sodobna in komponirana glasba","Popularna glasba","Jazz in improvizirana glasba",
+"Ambientalna in elektroakustièna glasba","Glasba godbenih sestavov",
+"Ljudska glasba in glasbe sveta","Filmska glasba","Veèžanrska (crossover) glasba",
+"Opera, muzikal in druga glasbeno-scenska dela","Balet","Sodobni ples","Folklorna dejavnost",
+"Gledališèe","Intermedijske razstave in drugi dogodki intermedijske umetnosti",
+"Predvajanje filmov in avdiovizualnih del","Razstave","Literarni veèeri in veèeri poezije",
+"Predavanja, okrogle mize, posveti s podroèja kulture","Simpoziji, proslave, akademije",
+"Veèžanrski kulturni dogodki","Drugo";
+VALUES[en]("PERFORMANCE BY TYPE")="Performance by type - TOTAL","Classical music",
+"Contemporary and composed music","Popular music","Jazz and improvised music",
+"Ambient and electroacoustic music","Wind band music","Folk music and music of the world",
+"Film music","Crossover music","Opera, Musical Theatre, and Other Music","Ballet","Modern dance",
+"Folklore activity","Theatre","Intermedia Exhibitions and Other Intermedia Art Events",
+"Screening of Films and Audiovisual Works","Exhibitions","Literary evenings and evenings of poetry",
+"Lectures, round tables, devoted to the field of culture",
+"Symposia, Celebrations, and Commemorative Events","Multigenre cultural events","Other";
+VALUES("MERITVE")="Število prireditev","Število obiskovalcev";
+VALUES[en]("MEASURES")="Number of performances","Attendance";
+VALUES("LETO")="2025";
+VALUES[en]("YEAR")="2025";
+TIMEVAL("LETO")=TLIST(A1),"2025";
+TIMEVAL[en]("YEAR")=TLIST(A1),"2025";
+CODES("VRSTA PRIREDITVE")="TOT","01","02","03","04","05","06","07","08","09","10","11","12","13",
+"14","15","16","17","18","19","20","21","22";
+CODES[en]("PERFORMANCE BY TYPE")="TOT","01","02","03","04","05","06","07","08","09","10","11","12",
+"13","14","15","16","17","18","19","20","21","22";
+CODES("MERITVE")="1","2";
+CODES[en]("MEASURES")="1","2";
+CODES("LETO")="2025";
+CODES[en]("YEAR")="2025";
+LAST-UPDATED="20261006 10:30";
+CONTACT="Statistièni urad RS, T: (01) 241 64 04, E: gp.surs@gov.si";
+CONTACT[en]="Statistical Office of the Republic of Slovenia, T: +386 1 241 64 04, E: gp.surs@gov.si";
+DATABASE="SI-STAT";
+DATABASE[en]="SI-STAT";
+SOURCE="Statistièni urad Republike Slovenije";
+SOURCE[en]="Statistical Office of the Republic of Slovenia";
+NOTEX="Z referenènim letom 2025 smo spremenili šifrant vrst prireditev, zato so podatki od leta 2025 objavljeni v novi tabeli. Kljub uvedbi novih kategorij vrst prireditev so podatki primerljivi s podatki v tabeli 1080711S.##Zbrani podatki so bili uteženi "
+"zaradi manjkajoèih odgovorov (neodgovorov), skupni seštevki podatkov v tabelah se zaradi zaokroževanja decimalnih števil lahko minimalno razlikujejo od vsote posameznih podatkov.#";
+NOTEX[en]="With reference year 2025, we revised the classification of types of performance; therefore, data from 2025 onwards are published in a new table. Despite the introduction of new categories of types of performance, the data remain comparable with "
+"the data presented in table 1080711S.##The collected data were weighted due to missing responses (non-response).The totals in tables may slightly differ from individual data due to rounding of decimal places.#";
+NOTE="Povezane vsebine:#- <A class=seznam HREF=https://www.stat.si/statweb/File/DocSysFile/9748>Metodološka pojasnila</A>##";
+NOTE[en]="Linked content:#- <A class=seznam HREF= https://www.stat.si/StatWeb/File/DocSysFile/9749 target=_blank>Methodological explanations</A>";
+DATASYMBOL1="N";
+DATASYMBOL1[en]="N";
+DATASYMBOL2="-";
+DATASYMBOL2[en]="-";
+DATASYMBOL4="z";
+DATASYMBOL4[en]="z";
+DATA=
+23300 5632907 
+1084 264480 
+70 11541 
+1011 323263 
+251 44478 
+14 776 
+80 22759 
+223 60776 
+17 6559 
+58 7511 
+241 114297 
+209 108890 
+710 69313 
+97 26928 
+6319 962463 
+158 163063 
+5113 252640 
+1015 521285 
+407 23912 
+990 54257 
+316 63127 
+1574 119492 
+3341 294151; 

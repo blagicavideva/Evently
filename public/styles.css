@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root { color-scheme: dark; --bg: #101b2d; --panel: #17243a; --line: #2a3850; --text: #f2f5fa; --muted: #91a0b7; --accent: #93edc2; --accent2: #c0a7ff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; }
+.page-shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+.topbar { height: 88px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(207,220,240,.12); }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font: 800 23px Manrope, sans-serif; letter-spacing: -1.1px; text-decoration: none; }
+.brand-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 10px; color: #0b1d24; background: var(--accent); font: 800 19px Manrope, sans-serif; }
+.topbar-note, .eyebrow, .footer-label { font-size: 10px; font-weight: 700; letter-spacing: 1.7px; }
+.topbar-note { color: var(--muted); }
+.intro { padding: 64px 0 42px; max-width: 770px; }
+.eyebrow { margin: 0 0 17px; color: var(--accent); }
+.live-dot { display: inline-block; width: 7px; height: 7px; margin: 0 8px 1px 0; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px #93edc277; }
+h1 { margin: 0; font: 700 clamp(34px, 5vw, 56px)/1.13 Manrope, sans-serif; letter-spacing: -2.4px; }
+h1 span { color: var(--accent2); }
+.lead { max-width: 630px; margin: 19px 0 0; color: #aab6c9; font-size: 15px; line-height: 1.75; }
+.dashboard { padding: 30px 30px 22px; border: 1px solid rgba(207,220,240,.12); border-radius: 18px; background: var(--panel); box-shadow: 0 25px 70px #080e1a35; }
+.dashboard-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
+.muted { margin-bottom: 10px; color: #8998af; }
+.eyebrow-separator { padding: 0 7px; color: #5c6a80; }
+h2 { margin: 0; font: 700 23px Manrope, sans-serif; letter-spacing: -.7px; }
+.chart-description { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+.controls { display: grid; gap: 7px; min-width: 190px; color: #b8c4d5; font-size: 11px; font-weight: 600; }
+select { width: 100%; padding: 10px 32px 10px 12px; border: 1px solid #35445c; border-radius: 9px; background: #111d30; color: var(--text); font: 500 12px 'DM Sans', sans-serif; }
+.summary-row { display: flex; align-items: center; gap: 13px; padding: 20px 0 6px; }
+.summary-card { display: grid; gap: 5px; min-width: 158px; padding: 12px 15px; border: 1px solid #2c3c53; border-radius: 10px; background: #1c2b42; }
+.summary-label { color: var(--muted); font-size: 10px; }
+.summary-card strong { font: 700 21px Manrope, sans-serif; }
+.summary-year strong { color: var(--accent2); }
+.status { margin: 0 0 0 auto; color: #91a0b7; font-size: 11px; text-align: right; }
+.status-warning { color: #ffd391; }
+.chart-wrap { position: relative; min-height: 250px; padding: 18px 0 0; overflow-x: auto; }
+#chart { display: block; width: 100%; min-width: 650px; }
+#chart[hidden] { display: none; }
+.empty-state { padding: 80px 0; color: var(--muted); text-align: center; }
+.legend { display: flex; align-items: center; gap: 9px; color: #c5cedc; font-size: 11px; }
+.legend-swatch { width: 9px; height: 9px; border-radius: 3px; background: var(--accent); }
+.unit-note { margin-left: auto; color: #74839a; }
+.method-note { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: #8492a7; font-size: 11px; line-height: 1.6; }
+.footer { display: flex; justify-content: space-between; gap: 24px; padding: 24px 2px 35px; color: var(--muted); font-size: 11px; }
+.footer > div, .footer-right { display: flex; align-items: center; gap: 12px; }
+.footer-label { color: #6f7f97; font-size: 9px; }
+.footer a { color: #c4d0df; text-decoration: none; }
+.footer a:hover { color: var(--accent); }
+.footer-right { gap: 20px; }
+@media (max-width: 680px) { .page-shell { width: min(100% - 28px, 1120px); } .topbar { height: 70px; } .topbar-note { font-size: 8px; letter-spacing: 1px; } .intro { padding: 48px 0 30px; } h1 { letter-spacing: -1.5px; } .dashboard { padding: 22px 17px; } .dashboard-head { align-items: flex-start; flex-direction: column; } .controls { width: 100%; } .summary-row { flex-wrap: wrap; } .status { width: 100%; margin: 2px 0 0; text-align: left; } .footer { flex-direction: column; } .footer-right { align-items: flex-start; flex-direction: column; gap: 6px; } }

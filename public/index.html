@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2d">
+  <title>Evently · Odprti podatki</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Evently, domača stran"><span class="brand-mark">E</span><span>evently</span></a>
+      <span class="topbar-note">ODPRTI PODATKI · SLOVENIJA</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow"><span class="live-dot"></span> PODATKI SURS · PC-AXIS</p>
+      <h1>Kultura v številkah.<br><span>Dogodki, ki nas povezujejo.</span></h1>
+      <p class="lead">Kako se glasbeni nastopi in obiskovalci razporedijo po različnih glasbenih zvrsteh? Razišči uradne podatke slovenskih ustanov z odrsko dejavnostjo.</p>
+    </section>
+
+    <section class="dashboard" aria-labelledby="chart-title">
+      <div class="dashboard-head">
+        <div>
+          <p class="eyebrow muted">SLOVENIJA <span class="eyebrow-separator">/</span> LETNI PREGLED</p>
+          <h2 id="chart-title">Glasbene prireditve in obisk</h2>
+          <p class="chart-description" id="chart-description">Primerjaj število nastopov ali obiskovalcev po glasbenih zvrsteh.</p>
+        </div>
+        <div class="controls">
+          <label for="scope">Vrste prireditev</label>
+          <select id="scope" aria-label="Filtriraj vrste prireditev">
+            <option value="music">Glasbene zvrsti</option>
+            <option value="all">Vse vrste</option>
+          </select>
+          <label for="measure">Prikaži</label>
+          <select id="measure" disabled aria-label="Izberi prikazano meritev"></select>
+        </div>
+      </div>
+
+      <div class="summary-row" aria-live="polite">
+        <div class="summary-card"><span class="summary-label" id="summary-label">Glasbene prireditve</span><strong id="summary-total">—</strong></div>
+        <div class="summary-card summary-year"><span class="summary-label">Referenčno leto</span><strong id="summary-year">—</strong></div>
+        <p class="status" id="status" role="status">Nalagam uradne podatke …</p>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="chart" role="img" aria-labelledby="chart-title chart-description"></canvas>
+        <p class="empty-state" id="empty" hidden>Za izbrano meritev ni podatkov za prikaz.</p>
+      </div>
+
+      <div class="legend"><span class="legend-swatch"></span><span id="legend-label">Število prireditev</span><span class="unit-note">enota: število</span></div>
+      <p class="method-note">Podatki zajemajo ustanove z odrsko dejavnostjo v Sloveniji. Vsota glasbenih zvrsti je prikazana ločeno od skupnega seštevka, zato se številke ne podvajajo.</p>
+    </section>
+
+    <footer class="footer">
+      <div><span class="footer-label">VIR PODATKOV</span><a id="source-link" href="https://podatki.gov.si/dataset/surs1080712s" target="_blank" rel="noreferrer">Statistični urad Republike Slovenije · OPSI ↗</a></div>
+      <div class="footer-right"><span id="updated">Posodobljeno ob nalaganju strani</span><span>Licenca CC BY 4.0</span></div>
+    </footer>
+  </main>
+</body>
+</html>

@@ -4,7 +4,8 @@
   "private": true,
   "description": "Puppeteer scraper za javno spletno stran Ticketmaster",
   "scripts": {
-    "scrape": "node src/scraper_ticketmaster.js"
+    "scrape": "node src/scraper_ticketmaster.js",
+    "open-data": "node src/open_data_server.js"
   },
   "dependencies": {
     "puppeteer": "18.1.0"
