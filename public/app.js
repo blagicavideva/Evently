@@ -3,9 +3,69 @@ const measureSelect = document.querySelector('#measure');
 const scopeSelect = document.querySelector('#scope');
 const statusEl = document.querySelector('#status');
 const emptyEl = document.querySelector('#empty');
+const plannerForm = document.querySelector('#planner-form');
+const plannerStatus = document.querySelector('#planner-status');
+const suggestionsEl = document.querySelector('#suggestions');
 const nf = new Intl.NumberFormat('sl-SI');
 let dataset;
 let chart;
+
+const localDate = new Date();
+const dateInput = document.querySelector('#event-date');
+dateInput.min = new Date(localDate.getTime() - localDate.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+dateInput.value = dateInput.min;
+
+plannerForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const button = document.querySelector('#planner-submit');
+  button.disabled = true;
+  plannerStatus.textContent = 'Pripravljam predloge …';
+  suggestionsEl.hidden = true;
+  suggestionsEl.replaceChildren();
+  const form = new FormData(plannerForm);
+  try {
+    const response = await fetch('/api/ideas', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(form.entries())),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || `Napaka ${response.status}`);
+    renderSuggestions(result);
+    plannerStatus.textContent = `Pripravljenih predlogov: ${result.predlogi.length} · ${result.lokacija} · ${result.datum}`;
+  } catch (error) {
+    plannerStatus.textContent = error.message;
+    plannerStatus.classList.add('status-warning');
+  } finally {
+    button.disabled = false;
+  }
+});
+
+function renderSuggestions(result) {
+  const heading = document.createElement('h3');
+  heading.textContent = `${result.vrstaDogodka} v ${result.lokacija}`;
+  const cards = result.predlogi.map((idea, index) => {
+    const card = document.createElement('article');
+    card.className = 'suggestion-card';
+    const number = document.createElement('span');
+    number.className = 'suggestion-number';
+    number.textContent = String(index + 1).padStart(2, '0');
+    const title = document.createElement('h4');
+    title.textContent = idea.naslov;
+    const description = document.createElement('p');
+    description.textContent = idea.opis;
+    const meta = document.createElement('span');
+    meta.className = 'suggestion-meta';
+    meta.textContent = `${idea.trajanje_min} min · ${idea.okolje}`;
+    card.append(number, title, description, meta);
+    return card;
+  });
+  const note = document.createElement('p');
+  note.className = 'suggestion-note';
+  note.textContent = result.opomba;
+  suggestionsEl.append(heading, ...cards, note);
+  suggestionsEl.hidden = false;
+}
 
 function selectedMeasure() {
   return Number(measureSelect.value || 0);
@@ -41,8 +101,8 @@ function render() {
       datasets: [{
         label: measure,
         data: rows.map(row => row.value),
-        backgroundColor: '#93edc2',
-        hoverBackgroundColor: '#c0a7ff',
+        backgroundColor: '#c9afe3',
+        hoverBackgroundColor: '#b995d5',
         borderRadius: 5,
         barThickness: 18,
       }],
@@ -59,12 +119,12 @@ function render() {
       scales: {
         x: {
           beginAtZero: true,
-          grid: { color: 'rgba(207,220,240,.10)' },
-          ticks: { color: '#91a0b7', callback: value => nf.format(value) },
+          grid: { color: 'rgba(103,78,120,.13)' },
+          ticks: { color: '#83738e', callback: value => nf.format(value) },
         },
         y: {
           grid: { display: false },
-          ticks: { color: '#cbd4e1', font: { family: 'DM Sans', size: 11 } },
+          ticks: { color: '#655570', font: { family: 'DM Sans', size: 11 } },
         },
       },
     },

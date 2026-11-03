@@ -22,6 +22,43 @@
       <p class="lead">Kako se glasbeni nastopi in obiskovalci razporedijo po različnih glasbenih zvrsteh? Razišči uradne podatke slovenskih ustanov z odrsko dejavnostjo.</p>
     </section>
 
+    <section class="planner" aria-labelledby="planner-title">
+      <div class="planner-copy">
+        <p class="eyebrow muted">OSEBNI PREDLOGI <span class="eyebrow-separator">/</span> LLM</p>
+        <h2 id="planner-title">Načrtuj dan okoli dogodka</h2>
+        <p>Vnesi kraj, datum, vrsto dogodka in želeno število predlogov. Evently jih prilagodi tvojemu načrtu.</p>
+      </div>
+      <form id="planner-form" class="planner-form">
+        <label for="location">Kraj in država</label>
+        <input id="location" name="lokacija" type="text" placeholder="npr. Ljubljana, Slovenija" minlength="2" maxlength="100" required>
+        <div class="form-grid">
+          <div>
+            <label for="event-date">Datum</label>
+            <input id="event-date" name="datum" type="date" required>
+          </div>
+          <div>
+            <label for="event-type">Vrsta dogodka</label>
+            <select id="event-type" name="vrstaDogodka" required>
+              <option value="Glasba">Glasba</option>
+              <option value="Festival">Festival</option>
+              <option value="Gledališče">Gledališče</option>
+              <option value="Šport">Šport</option>
+              <option value="Drugo">Drugo</option>
+            </select>
+          </div>
+          <div>
+            <label for="suggestion-count">Število predlogov (1–5)</label>
+            <input id="suggestion-count" name="steviloPredlogov" type="number" min="1" max="5" value="3" step="1" required>
+          </div>
+        </div>
+        <label for="wishes">Kaj te zanima? <span class="optional">neobvezno</span></label>
+        <input id="wishes" name="zelje" type="text" maxlength="240" placeholder="npr. lokalna hrana, miren sprehod">
+        <button id="planner-submit" type="submit">Predlagaj aktivnosti <span aria-hidden="true">→</span></button>
+        <p class="planner-status" id="planner-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="suggestions" id="suggestions" aria-live="polite" hidden></div>
+    </section>
+
     <section class="dashboard" aria-labelledby="chart-title">
       <div class="dashboard-head">
         <div>

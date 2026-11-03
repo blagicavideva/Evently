@@ -70,3 +70,27 @@ obiskovalci v ustanovah z odrsko dejavnostjo po vrstah prireditve, Slovenija,
 annually](https://podatki.gov.si/dataset/surs1080712s), podatke pa objavlja
 Statistični urad Republike Slovenije pod licenco CC BY 4.0. Nabor ima referenčno
 leto 2025; SURS opozarja, da se je s tem letom spremenil šifrant vrst prireditev.
+
+## Naloga 4 – LLM predlogi
+
+Na strani je obrazec, kjer uporabnik vnese kraj in državo, datum, vrsto dogodka
+ter po želji svoje interese. Strežnik iz teh vrednosti sestavi dinamičen prompt
+in pošlje zahtevo Groq Chat Completions API-ju, ki vrne JSON. Strežnik JSON
+razčleni in preveri ter ga deserializira v razreda `OdgovorLLM` in
+`PredlogAktivnosti` v `src/llm.js`. Uporabnik izbere od enega do pet predlogov.
+Predlogi so ideje, ne potrjeni dogodki ali urniki.
+
+Za uporabo potrebuješ Groq API ključ. V CMD ga nastavi v istem oknu, iz
+katerega zaženeš strežnik:
+
+```cmd
+set GROQ_API_KEY=PASTE_YOUR_API_KEY_HERE
+npm run open-data
+```
+
+Vrednost `PASTE_YOUR_API_KEY_HERE` zamenjaj s svojim ključem. Ključa ne vpisuj v
+datoteke projekta in ga ne objavi v Git. Po nastavitvi odpri
+`http://localhost:3000`; obstoječi graf in obrazec za LLM uporabljata isti
+strežnik. Za odgovor, ki sledi JSON shemi, je privzeti model
+`openai/gpt-oss-20b`; po želji ga lahko spremeniš z okoljsko spremenljivko
+`GROQ_MODEL`. Groqov brezplačni paket ima omejitve hitrosti in dnevne porabe.

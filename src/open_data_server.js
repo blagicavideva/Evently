@@ -2,6 +2,7 @@ const fs = require('node:fs/promises');
 const http = require('node:http');
 const https = require('node:https');
 const path = require('node:path');
+const { generateActivitySuggestions } = require('./llm');
 
 const ROOT = path.resolve(__dirname, '..');
 const PORT = Number(process.env.PORT || 3000);
@@ -93,6 +94,20 @@ const contentTypes = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascr
 
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
+  if (request.method === 'POST' && url.pathname === '/api/ideas') {
+    try {
+      const input = await readJsonBody(request);
+      const result = await generateActivitySuggestions(input);
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      response.end(JSON.stringify(result));
+    } catch (error) {
+      const status = error.statusCode || 400;
+      response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+      response.end(JSON.stringify({ error: error.message }));
+    }
+    return;
+  }
+
   if (url.pathname === '/api/prireditve') {
     try {
       const data = await loadDataset();
@@ -121,5 +136,27 @@ const server = http.createServer(async (request, response) => {
     response.end('Not found');
   }
 });
+
+function readJsonBody(request) {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    request.setEncoding('utf8');
+    request.on('data', chunk => {
+      body += chunk;
+      if (body.length > 12000) {
+        reject(Object.assign(new Error('Vnos je predolg.'), { statusCode: 413 }));
+        request.destroy();
+      }
+    });
+    request.on('end', () => {
+      try {
+        resolve(JSON.parse(body));
+      } catch {
+        reject(Object.assign(new Error('Poslan obrazec ni veljaven JSON.'), { statusCode: 400 }));
+      }
+    });
+    request.on('error', reject);
+  });
+}
 
 server.listen(PORT, () => console.log(`Evently odprti podatki: http://localhost:${PORT}`));
