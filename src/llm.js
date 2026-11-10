@@ -91,7 +91,7 @@ function validateInput(input) {
     throw Object.assign(new Error('Število predlogov mora biti celo število med 1 in 5.'), { statusCode: 400 });
   }
   if (!process.env.GROQ_API_KEY) {
-    throw Object.assign(new Error('Manjka Groq API ključ. V CMD najprej nastavi GROQ_API_KEY in znova zaženi aplikacijo.'), { statusCode: 503 });
+    throw Object.assign(new Error('Manjka Groq API ključ. V korenski datoteki .env nastavi GROQ_API_KEY in znova zaženi aplikacijo.'), { statusCode: 503 });
   }
   return { lokacija, datum, vrstaDogodka, preference, steviloPredlogov };
 }

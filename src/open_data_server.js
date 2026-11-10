@@ -1,8 +1,35 @@
 const fs = require('node:fs/promises');
+const fsSync = require('node:fs');
 const http = require('node:http');
 const https = require('node:https');
 const path = require('node:path');
+
+function loadLocalEnv() {
+  const envPath = path.resolve(__dirname, '..', '.env');
+  let contents;
+  try {
+    contents = fsSync.readFileSync(envPath, 'utf8');
+  } catch (error) {
+    if (error.code === 'ENOENT') return;
+    throw error;
+  }
+  for (const line of contents.split(/\r?\n/)) {
+    const match = line.match(/^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*$/);
+    if (!match || Object.hasOwn(process.env, match[1])) continue;
+    let value = match[2];
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    } else {
+      value = value.replace(/\s+#.*$/, '');
+    }
+    process.env[match[1]] = value;
+  }
+}
+
+loadLocalEnv();
+
 const { generateActivitySuggestions } = require('./llm');
+const { startGrpc } = require('./open_data_grpc');
 
 const ROOT = path.resolve(__dirname, '..');
 const PORT = Number(process.env.PORT || 3000);
@@ -10,6 +37,7 @@ const PX_URL = 'https://pxweb.stat.si/SiStatData/Resources/PX/Databases/Data/108
 const OPSI_URL = 'https://podatki.gov.si/dataset/surs1080712s';
 const PX_FILE = path.join(ROOT, 'data', 'prireditve_obiskovalci.px');
 const PUBLIC_DIR = path.join(ROOT, 'public');
+let grpcClient;
 
 function readPxValues(text, variable) {
   const escaped = variable.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -94,6 +122,12 @@ const contentTypes = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascr
 
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
+  if (url.pathname.startsWith('/api/') && !grpcClient) {
+    response.writeHead(503, { 'Content-Type': 'application/json; charset=utf-8' });
+    response.end(JSON.stringify({ error: 'gRPC storitev se še zaganja.' }));
+    return;
+  }
+
   if (request.method === 'POST' && url.pathname === '/api/ideas') {
     try {
       const input = await readJsonBody(request);
@@ -110,13 +144,64 @@ const server = http.createServer(async (request, response) => {
 
   if (url.pathname === '/api/prireditve') {
     try {
-      const data = await loadDataset();
+      const grpcData = await grpcUnary('getDataset', {});
+      const data = fromGrpcDataset(grpcData);
       response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
       response.end(JSON.stringify(data));
     } catch (error) {
       response.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
-      response.end(JSON.stringify({ error: `Branje PC-Axis podatkov ni uspelo: ${error.message}` }));
+      response.end(JSON.stringify({ error: `Pridobivanje podatkov prek gRPC ni uspelo: ${error.message}` }));
     }
+    return;
+  }
+
+  if (url.pathname === '/api/measures') {
+    try {
+      const data = await grpcUnary('getMeasures', {});
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      response.end(JSON.stringify(data));
+    } catch (error) {
+      response.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      response.end(JSON.stringify({ error: error.message }));
+    }
+    return;
+  }
+
+  if (url.pathname === '/api/chart-data') {
+    try {
+      const data = await grpcUnary('getChartData', chartRequest(url));
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      response.end(JSON.stringify(data));
+    } catch (error) {
+      response.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+      response.end(JSON.stringify({ error: error.message }));
+    }
+    return;
+  }
+
+  if (url.pathname === '/api/chart-stream') {
+    const call = grpcClient.streamChartData(chartRequest(url));
+    let headersSent = false;
+    call.on('data', row => {
+      if (!headersSent) {
+        response.writeHead(200, { 'Content-Type': 'application/x-ndjson; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
+        headersSent = true;
+      }
+      response.write(`${JSON.stringify(row)}\n`);
+    });
+    call.on('error', error => {
+      if (!headersSent) {
+        response.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        response.end(JSON.stringify({ error: error.message }));
+      } else response.end();
+    });
+    call.on('end', () => {
+      if (!headersSent) response.writeHead(200, { 'Content-Type': 'application/x-ndjson; charset=utf-8', 'Cache-Control': 'no-store' });
+      response.end();
+    });
+    response.on('close', () => {
+      if (!response.writableEnded) call.cancel();
+    });
     return;
   }
 
@@ -159,4 +244,40 @@ function readJsonBody(request) {
   });
 }
 
-server.listen(PORT, () => console.log(`Evently odprti podatki: http://localhost:${PORT}`));
+function grpcUnary(method, payload) {
+  return new Promise((resolve, reject) => grpcClient[method](payload, (error, result) => error ? reject(error) : resolve(result)));
+}
+
+function chartRequest(url) {
+  return { measureIndex: Number(url.searchParams.get('measureIndex') || 0), scope: url.searchParams.get('scope') || 'music' };
+}
+
+function fromGrpcDataset(data) {
+  const rows = data.rows.map(row => ({
+    vrsta: row.type,
+    vrstaIndex: row.typeIndex,
+    meritev: row.measure,
+    poLetih: Object.fromEntries(row.values.map(item => [item.year, item.hasValue ? item.value : null])),
+  }));
+  return {
+    title: data.title,
+    years: data.years,
+    measures: data.measures,
+    rows,
+    glasbeneVrste: [...new Set(rows.filter(row => row.vrstaIndex > 0).map(row => row.vrsta))].slice(0, 10),
+    updated: null,
+    sourceUrl: data.sourceUrl,
+    pxUrl: data.pcAxisUrl,
+    osvezeno: data.refreshedAt,
+    zivVir: data.liveSource,
+    ...(data.warning ? { opozorilo: data.warning } : {}),
+  };
+}
+
+startGrpc(loadDataset).then(({ client }) => {
+  grpcClient = client;
+  server.listen(PORT, () => console.log(`Evently: http://localhost:${PORT} · gRPC posluša na 127.0.0.1:50051`));
+}).catch(error => {
+  console.error(`Zagon gRPC strežnika ni uspel: ${error.message}`);
+  process.exitCode = 1;
+});

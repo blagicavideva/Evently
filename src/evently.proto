@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package evently;
+
+message Empty {}
+
+message YearValue {
+  string year = 1;
+  bool has_value = 2;
+  double value = 3;
+}
+
+message DatasetRow {
+  string type = 1;
+  int32 type_index = 2;
+  string measure = 3;
+  repeated YearValue values = 4;
+}
+
+message DatasetResponse {
+  string title = 1;
+  repeated string years = 2;
+  repeated string measures = 3;
+  repeated DatasetRow rows = 4;
+  bool live_source = 5;
+  string refreshed_at = 6;
+  string source_url = 7;
+  string pc_axis_url = 8;
+  string warning = 9;
+}
+
+message MeasuresResponse {
+  repeated string measures = 1;
+}
+
+message ChartRequest {
+  int32 measure_index = 1;
+  string scope = 2;
+}
+
+message ChartRow {
+  string type = 1;
+  double value = 2;
+}
+
+message ChartDataResponse {
+  string measure = 1;
+  string year = 2;
+  double total = 3;
+  repeated ChartRow rows = 4;
+}
+
+message StreamChartRow {
+  string measure = 1;
+  string year = 2;
+  double total = 3;
+  string type = 4;
+  double value = 5;
+}
+
+service EventlyData {
+  rpc GetDataset(Empty) returns (DatasetResponse);
+  rpc GetMeasures(Empty) returns (MeasuresResponse);
+  rpc GetChartData(ChartRequest) returns (ChartDataResponse);
+  rpc StreamChartData(ChartRequest) returns (stream StreamChartRow);
+}

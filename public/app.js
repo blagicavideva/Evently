@@ -9,6 +9,9 @@ const suggestionsEl = document.querySelector('#suggestions');
 const nf = new Intl.NumberFormat('sl-SI');
 let dataset;
 let chart;
+let activeRows = [];
+let activeMeasure;
+let activeYear;
 
 const localDate = new Date();
 const dateInput = document.querySelector('#event-date');
@@ -71,18 +74,12 @@ function selectedMeasure() {
   return Number(measureSelect.value || 0);
 }
 
-function render() {
+function renderChart() {
   if (!dataset) return;
   const measureIndex = selectedMeasure();
-  const measure = dataset.measures[measureIndex];
-  const year = dataset.years.at(-1);
-  const showAll = scopeSelect.value === 'all';
-  const rows = dataset.rows
-    .filter(row => row.meritev === measure)
-    .filter(row => row.vrstaIndex !== 0 && (showAll || row.vrstaIndex <= dataset.glasbeneVrste.length))
-    .map(row => ({ label: row.vrsta, value: row.poLetih[year] }))
-    .filter(row => row.value !== null && row.value !== undefined)
-    .sort((a, b) => b.value - a.value);
+  const measure = activeMeasure || dataset.measures[measureIndex];
+  const year = activeYear || dataset.years.at(-1);
+  const rows = activeRows;
 
   document.querySelector('#legend-label').textContent = measure;
   document.querySelector('#summary-label').textContent = measure;
@@ -90,14 +87,24 @@ function render() {
   document.querySelector('#summary-total').textContent = nf.format(rows.reduce((sum, row) => sum + row.value, 0));
   emptyEl.hidden = rows.length > 0;
   canvas.hidden = rows.length === 0;
-  chart?.destroy();
-  if (!rows.length) return;
+  if (!rows.length) {
+    chart?.destroy();
+    chart = null;
+    return;
+  }
   canvas.style.height = `${Math.max(280, rows.length * 34)}px`;
-  canvas.setAttribute('aria-label', `${measure} ${showAll ? 'po vrstah prireditev' : 'po glasbenih zvrsteh'} v Sloveniji, ${year}`);
+  canvas.setAttribute('aria-label', `${measure} po ${scopeSelect.value === 'all' ? 'vseh vrstah prireditev' : 'glasbenih zvrsteh'} v Sloveniji, ${year}`);
+  if (chart) {
+    chart.data.labels = rows.map(row => row.type);
+    chart.data.datasets[0].label = measure;
+    chart.data.datasets[0].data = rows.map(row => row.value);
+    chart.update('none');
+    return;
+  }
   chart = new Chart(canvas, {
     type: 'bar',
     data: {
-      labels: rows.map(row => row.label),
+      labels: rows.map(row => row.type),
       datasets: [{
         label: measure,
         data: rows.map(row => row.value),
@@ -131,32 +138,97 @@ function render() {
   });
 }
 
+async function loadUnaryChart() {
+  const params = new URLSearchParams({ measureIndex: String(selectedMeasure()), scope: scopeSelect.value });
+  const response = await fetch(`/api/chart-data?${params}`, { cache: 'no-store' });
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || `Napaka ${response.status}`);
+  activeRows = result.rows;
+  activeMeasure = result.measure;
+  activeYear = result.year;
+  renderChart();
+  statusEl.textContent = `Podatki prejeti z gRPC klicem · ${result.rows.length} vrst.`;
+  statusEl.classList.remove('status-warning');
+}
+
+async function loadStreamChart() {
+  const params = new URLSearchParams({ measureIndex: String(selectedMeasure()), scope: scopeSelect.value });
+  const response = await fetch(`/api/chart-stream?${params}`, { cache: 'no-store' });
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error || `Napaka ${response.status}`);
+  }
+  activeRows = [];
+  activeMeasure = dataset.measures[selectedMeasure()];
+  activeYear = dataset.years.at(-1);
+  chart?.destroy();
+  chart = null;
+  renderChart();
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let pending = '';
+  while (true) {
+    const { value, done } = await reader.read();
+    pending += decoder.decode(value || new Uint8Array(), { stream: !done });
+    const lines = pending.split('\n');
+    pending = lines.pop();
+    for (const line of lines) {
+      if (!line.trim()) continue;
+      const row = JSON.parse(line);
+      activeMeasure = row.measure;
+      activeYear = row.year;
+      activeRows.push({ type: row.type, value: row.value });
+      renderChart();
+      statusEl.textContent = `gRPC pretakanje podatkov · prejetih ${activeRows.length} vrst …`;
+      statusEl.classList.remove('status-warning');
+    }
+    if (done) break;
+  }
+  if (pending.trim()) {
+    const row = JSON.parse(pending);
+    activeRows.push({ type: row.type, value: row.value });
+    activeMeasure = row.measure;
+    activeYear = row.year;
+    renderChart();
+  }
+  statusEl.textContent = `gRPC pretakanje končano · ${activeRows.length} vrst.`;
+}
+
 async function load() {
   try {
-    const response = await fetch('/api/prireditve', { cache: 'no-store' });
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error || `Napaka ${response.status}`);
+    const [datasetResponse, measuresResponse] = await Promise.all([
+      fetch('/api/prireditve', { cache: 'no-store' }),
+      fetch('/api/measures', { cache: 'no-store' }),
+    ]);
+    const [data, measuresData] = await Promise.all([datasetResponse.json(), measuresResponse.json()]);
+    if (!datasetResponse.ok) throw new Error(data.error || `Napaka ${datasetResponse.status}`);
+    if (!measuresResponse.ok) throw new Error(measuresData.error || `Napaka ${measuresResponse.status}`);
     dataset = data;
-    measureSelect.replaceChildren(...dataset.measures.map((measure, index) => {
+    measureSelect.replaceChildren(...measuresData.measures.map((measure, index) => {
       const option = document.createElement('option');
       option.value = String(index);
       option.textContent = measure;
       return option;
     }));
     measureSelect.disabled = false;
-    measureSelect.addEventListener('change', render);
-    scopeSelect.addEventListener('change', render);
+    measureSelect.addEventListener('change', () => loadUnaryChart().catch(showChartError));
+    scopeSelect.addEventListener('change', () => loadStreamChart().catch(showChartError));
     document.querySelector('#source-link').href = dataset.sourceUrl;
     document.querySelector('#updated').textContent = dataset.zivVir
       ? `Osveženo ob ${new Date(dataset.osvezeno).toLocaleTimeString('sl-SI', { hour: '2-digit', minute: '2-digit' })}`
       : 'Prikazana je lokalna kopija PC-Axis';
     statusEl.textContent = dataset.zivVir ? 'Podatki so osveženi ob nalaganju.' : dataset.opozorilo;
     statusEl.classList.toggle('status-warning', !dataset.zivVir);
-    render();
+    await loadUnaryChart();
   } catch (error) {
     statusEl.textContent = `Podatkov ni bilo mogoče naložiti: ${error.message}`;
     statusEl.classList.add('status-warning');
   }
+}
+
+function showChartError(error) {
+  statusEl.textContent = `Pridobivanje grafa prek gRPC ni uspelo: ${error.message}`;
+  statusEl.classList.add('status-warning');
 }
 
 load();

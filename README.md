@@ -80,17 +80,36 @@ razčleni in preveri ter ga deserializira v razreda `OdgovorLLM` in
 `PredlogAktivnosti` v `src/llm.js`. Uporabnik izbere od enega do pet predlogov.
 Predlogi so ideje, ne potrjeni dogodki ali urniki.
 
-Za uporabo potrebuješ Groq API ključ. V CMD ga nastavi v istem oknu, iz
-katerega zaženeš strežnik:
+Za uporabo obrazca LLM potrebuješ Groq API ključ. Odpri datoteko `.env` v
+korenski mapi projekta in vpiši ključ za `GROQ_API_KEY`:
+
+```env
+GROQ_API_KEY=tvoj_groq_api_kljuc
+# GROQ_MODEL=openai/gpt-oss-20b
+```
+
+Datoteka `.env` je izključena iz Gita. Po shranjevanju zaženi `npm run open-data`;
+strežnik ključ naloži ob zagonu, zato ga ni treba vsakič znova vnašati v CMD.
+Po spremembi ključa strežnik ustavi s Ctrl+C in ga ponovno zaženi. Vzorec je v
+`.env.example`. Za odgovor, ki sledi JSON shemi, je privzeti model
+`openai/gpt-oss-20b`; po želji ga lahko spremeniš z okoljsko spremenljivko
+`GROQ_MODEL`. Groqov brezplačni paket ima omejitve hitrosti in dnevne porabe.
+
+## Naloga 5 – gRPC
+
+Datoteka `src/evently.proto` definira service `EventlyData` in strukturirana
+Protocol Buffers sporočila. Storitev izvede štiri RPC klice: `GetDataset`,
+`GetMeasures`, `GetChartData` in strežniško pretakanje `StreamChartData`.
+Izbira meritve v grafu sproži običajen RPC, izbira vrste prireditev pa sproži
+pretakanje; vrstice se prikažejo sproti. HTTP strežnik v Node.js posreduje
+zahteve iz brskalnika do lokalne gRPC storitve.
+
+Za zagon iz korenske mape projekta:
 
 ```cmd
-set GROQ_API_KEY=PASTE_YOUR_API_KEY_HERE
+npm install
 npm run open-data
 ```
 
-Vrednost `PASTE_YOUR_API_KEY_HERE` zamenjaj s svojim ključem. Ključa ne vpisuj v
-datoteke projekta in ga ne objavi v Git. Po nastavitvi odpri
-`http://localhost:3000`; obstoječi graf in obrazec za LLM uporabljata isti
-strežnik. Za odgovor, ki sledi JSON shemi, je privzeti model
-`openai/gpt-oss-20b`; po želji ga lahko spremeniš z okoljsko spremenljivko
-`GROQ_MODEL`. Groqov brezplačni paket ima omejitve hitrosti in dnevne porabe.
+Odpri `http://localhost:3000`. Spletni strežnik posluša na vratih 3000, gRPC
+strežnik pa lokalno na `127.0.0.1:50051`.
